@@ -38,9 +38,8 @@
                                     <div class="invalid-feedback">Email is not valid.</div>
                                 </div>
                                 <div class="form-floating">
-                                    <input class="form-control" name="phone" id="phone" type="tel" placeholder="Enter your phone number..." />
+                                    <input class="form-control phone" name="phone" id="phone" type="tel" placeholder="Enter your phone number..." />
                                     <label for="phone">Phone Number</label>
-                                    <div class="invalid-feedback">A phone number is required.</div>
                                 </div>
                                 <div class="form-floating">
                                     <input class="form-control" name="subject" id="subject" type="text" placeholder="Enter the subject..." />
