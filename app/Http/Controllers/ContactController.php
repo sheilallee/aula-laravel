@@ -42,7 +42,9 @@ class ContactController extends Controller
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Notifications\NewContact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 
 class ContactController extends Controller
 {
@@ -53,6 +55,11 @@ class ContactController extends Controller
     public function send(Request $request){
         #dd($request->all());
         $contact = Contact::create($request->all());
+
+        #envia o e-mail
+        Notification::route("mail", config("mail.from.address"))
+        ->notify(new NewContact($contact));
+
         #dd($contact);
         return redirect()->back();
     }
